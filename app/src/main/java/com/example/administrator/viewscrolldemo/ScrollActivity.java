@@ -3,7 +3,6 @@ package com.example.administrator.viewscrolldemo;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 
 /**
@@ -14,30 +13,26 @@ import android.widget.Button;
 
 public class ScrollActivity extends Activity
 {
-
-    private Button ScrollTo;
-    private Button ScrollBy;
-
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll);
-        ScrollTo = (Button) findViewById(R.id.ScrollTo);
-        ScrollBy = (Button) findViewById(R.id.ScrollBy);
+        final Button ScrollToBtn = (Button) findViewById(R.id.ScrollTo);
+        final Button ScrollByBtn = (Button) findViewById(R.id.ScrollBy);
 
-        ScrollTo.setOnClickListener(new View.OnClickListener()
+        ScrollToBtn.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                //TranslateAnimation translateAnimation = new TranslateAnimation(ScrollActivity.this);
+                ScrollToBtn.scrollTo(100, 100);
             }
         });
 
-        ScrollBy.setOnClickListener(new View.OnClickListener()
+        ScrollByBtn.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-
+                ScrollByBtn.scrollBy(100, 100);
             }
         });
     }
